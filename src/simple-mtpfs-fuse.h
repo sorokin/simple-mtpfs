@@ -18,7 +18,6 @@
 #ifndef SMTPFS_FUSE_H
 #define SMTPFS_FUSE_H
 
-#include <config.h>
 #include <memory>
 #include <string>
 #include <cstdlib>

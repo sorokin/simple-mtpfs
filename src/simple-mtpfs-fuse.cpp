@@ -15,7 +15,6 @@
 *   along with this program. If not, see <http://www.gnu.org/licenses/>.
 * ***** END LICENSE BLOCK ***** */
 
-#include <config.h>
 #include <iostream>
 extern "C" {
 #  include <errno.h>
@@ -26,6 +25,8 @@ extern "C" {
 #include "simple-mtpfs-fuse.h"
 #include "simple-mtpfs-log.h"
 #include "simple-mtpfs-util.h"
+
+#define VERSION "0.3.1"
 
 int wrap_getattr(const char *path, struct stat *statbuf)
 {
@@ -339,7 +340,7 @@ void SMTPFileSystem::printHelp() const
     fuse_opt_add_arg(&args, "-ho");
     fuse_main(args.argc, args.argv, &tmp_operations, nullptr);
     fuse_opt_free_args(&args);
-    std::cerr << "\nReport bugs to <" << PACKAGE_BUGREPORT << ">.\n";
+    std::cerr << "\nReport bugs to <vanyacpp@gmail.com>.\n";
 }
 
 void SMTPFileSystem::printVersion() const

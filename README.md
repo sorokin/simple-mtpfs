@@ -23,19 +23,9 @@ requires the C++ compiler to support **C++11** standard.
 To install the driver, follow these steps:
 
     $ mkdir build && cd build
-    $ ../configure
+    $ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
     $ make
     $ make install (as root)
-
-Due to MTP nature, it is necessary to use a folder, where the temporary files
-downloaded will be downloaded. The project can be configured to use custom
-directory for such files. To configure the simple-mtpfs to use desired
-temporary directory, add `--with-tmpdir=TMPDIR` option to configure script.
-Default value for temporary directory is `/tmp`.
-
-If you got the sources from git repository, first you have to run:
-
-    $ ./autogen.sh
 
 MOUNTING
 ========
@@ -79,8 +69,7 @@ To unmount MTP device, execute following command:
 BUG REPORTS
 ===========
 
-Report bugs to [phatina@gmail.com](mailto:phatina@gmail.com) or
-[simple-mtpfs issues][].
+Report bugs to [simple-mtpfs issues][].
 
-[simple-mtpfs]: https://github.com/phatina/simple-mtpfs "simple-mtpfs repository on github"
-[simple-mtpfs issues]: https://github.com/phatina/simple-mtpfs/issues "Report a bug"
+[simple-mtpfs]: https://github.com/sorokin/simple-mtpfs "simple-mtpfs repository on github"
+[simple-mtpfs issues]: https://github.com/sorokin/simple-mtpfs/issues "Report a bug"

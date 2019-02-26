@@ -15,7 +15,6 @@
 *   along with this program. If not, see <http://www.gnu.org/licenses/>.
 * ***** END LICENSE BLOCK ***** */
 
-#include <config.h>
 #include <algorithm>
 #include <sstream>
 #include <vector>
@@ -147,13 +146,13 @@ bool MTPDevice::connect_priv(int dev_no, const std::string &dev_file)
     LIBMTP_raw_device_t *raw_device = &raw_devices[dev_no];
 
     // Do not output LIBMTP debug stuff
-    StreamHelper::off();
+    //StreamHelper::off();
     m_device = LIBMTP_Open_Raw_Device_Uncached(raw_device);
-    StreamHelper::on();
+    //StreamHelper::on();
     free(static_cast<void*>(raw_devices));
 
     if (!m_device) {
-        LIBMTP_Dump_Errorstack(m_device);
+        logerr("Can not open device no. ", dev_no + 1, ".\n");
         return false;
     }
 

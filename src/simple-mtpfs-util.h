@@ -18,7 +18,6 @@
 #ifndef SIMPLE_MTPFS_UTIL
 #define SIMPLE_MTPFS_UTIL
 
-#include <config.h>
 #include <cstdint>
 #include <string>
 

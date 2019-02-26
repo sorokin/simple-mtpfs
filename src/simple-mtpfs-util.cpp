@@ -15,7 +15,6 @@
 *   along with this program. If not, see <http://www.gnu.org/licenses/>.
 * ***** END LICENSE BLOCK ***** */
 
-#include <config.h>
 #include <cstdio>
 #include <cstring>
 #ifdef HAVE_LIBUSB1
@@ -111,7 +110,7 @@ std::string smtpfs_get_tmpdir()
     } else {
         c_tmp = getenv("TMPDIR");
         if (!c_tmp)
-            c_tmp = TMPDIR;
+            c_tmp = "/tmp";
         tmp_dir = smtpfs_realpath(c_tmp);
     }
 
